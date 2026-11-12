@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import chess.ChessException;
 import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.ChessPosition;
@@ -18,7 +19,7 @@ public class Program {
 		
 		
 
-		while (true) {
+		while (! chessMatch.getCheck()) {
 			UI.clearScreen();
 			UI.printMatch(chessMatch, captured);
 			System.out.println();
@@ -37,9 +38,11 @@ public class Program {
 			if (capturedPiece != null) {
 			    captured.add(capturedPiece);
 			}
-			
-			
 
 		}
+		UI.clearScreen();
+		UI.printMatch(chessMatch, captured);
+			
+		}
+		
 	}
-}
